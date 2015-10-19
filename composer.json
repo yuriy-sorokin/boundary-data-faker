@@ -1,0 +1,20 @@
+{
+  "name": "yuriy-sorokin/boundary-data-faker",
+  "description": "A library to generate boundary condition values for your tests",
+  "require-dev": {
+    "phpunit/phpunit": "^4.8"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Iurii Sorokin",
+      "email": "yuriy.sorokin.gp@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-0": {
+      "YuriySorokin\\BoundaryDataFaker": ""
+    }
+  }
+}
