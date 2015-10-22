@@ -1,6 +1,7 @@
 <?php
 namespace YuriySorokin\BoundaryDataFaker\Model;
 
+use YuriySorokin\BoundaryDataFaker\Model\Field\ArrayField;
 use YuriySorokin\BoundaryDataFaker\Model\Field\NumericField;
 use YuriySorokin\BoundaryDataFaker\Model\Field\StringField;
 
@@ -28,5 +29,15 @@ class FieldFactory
     public function createNumeric($name)
     {
         return new NumericField($name);
+    }
+
+    /**
+     * @param string $name
+     * @throws \InvalidArgumentException
+     * @return \YuriySorokin\BoundaryDataFaker\Model\Field\NumericField
+     */
+    public function createArray($name)
+    {
+        return new ArrayField($name);
     }
 }
