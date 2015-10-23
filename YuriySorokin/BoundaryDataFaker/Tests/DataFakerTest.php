@@ -26,7 +26,7 @@ class DataFakerTest extends \PHPUnit_Framework_TestCase
             ->getData();
 
         static::assertTrue(is_array($data));
-        static::assertEquals(3, count($data));
+        static::assertEquals(2, count($data));
         static::assertArrayHasKey('name', $data[0]);
         static::assertArrayHasKey('age', $data[0]);
     }

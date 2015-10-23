@@ -10,6 +10,10 @@ use YuriySorokin\BoundaryDataFaker\Model\Field\Field;
 class DataFaker
 {
     /**
+     * @var array
+     */
+    protected $data = [];
+    /**
      * @var \YuriySorokin\BoundaryDataFaker\Model\Field\Field[]
      */
     private $fields = [];
@@ -30,16 +34,16 @@ class DataFaker
      */
     public function getData()
     {
-        $data = [[], [], []];
+        $this->data = [];
 
         foreach ($this->fields as $field) {
             foreach ($field->getValues() as $key => $fieldValue) {
-                $data[$key][$field->getName()] = $fieldValue;
+                $this->data[$key][$field->getName()] = $fieldValue;
             }
         }
 
         $this->fields = [];
 
-        return $data;
+        return $this->data;
     }
 }

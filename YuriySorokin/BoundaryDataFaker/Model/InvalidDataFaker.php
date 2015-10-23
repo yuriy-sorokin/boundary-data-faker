@@ -19,4 +19,12 @@ class InvalidDataFaker extends DataFaker
 
         return parent::addField($field);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getData()
+    {
+        return array_merge(parent::getData(), []);
+    }
 }
