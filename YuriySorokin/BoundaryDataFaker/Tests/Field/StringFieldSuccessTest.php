@@ -14,9 +14,10 @@ class StringFieldSuccessTest extends \PHPUnit_Framework_TestCase
      */
     private $factory;
 
-    public function test()
+    public function testInvalidBehaviour()
     {
         $field = $this->factory->createString('name');
+        $field->setValidBehaviour(false);
         $values = $field
             ->setMinLength(5)
             ->setMaxLength(20)
@@ -27,6 +28,20 @@ class StringFieldSuccessTest extends \PHPUnit_Framework_TestCase
         static::assertSame(0, strlen($values[0]));
         static::assertSame(4, strlen($values[1]));
         static::assertSame(21, strlen($values[2]));
+    }
+
+    public function testValidBehaviour()
+    {
+        $field = $this->factory->createString('name');
+        $values = $field
+            ->setMinLength(5)
+            ->setMaxLength(20)
+            ->getValues();
+
+        static::assertTrue(is_array($values));
+        static::assertSame(2, count($values));
+        static::assertSame(5, strlen($values[0]));
+        static::assertSame(20, strlen($values[1]));
     }
 
     protected function setUp()

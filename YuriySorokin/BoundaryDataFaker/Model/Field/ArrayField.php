@@ -9,11 +9,15 @@ class ArrayField extends Field
 {
     protected function generateValues()
     {
-        $this
-            ->setNullValue()
-            ->setStringValue()
-            ->setObjectValue()
-            ->setIntegerValue();
+        if (true === $this->isValidBehaviour()) {
+            $this->values[] = [];
+        } else {
+            $this
+                ->setNullValue()
+                ->setStringValue()
+                ->setObjectValue()
+                ->setIntegerValue();
+        }
     }
 
     /**

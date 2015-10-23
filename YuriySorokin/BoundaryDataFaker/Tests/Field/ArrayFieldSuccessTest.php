@@ -14,9 +14,10 @@ class ArrayFieldSuccessTest extends \PHPUnit_Framework_TestCase
      */
     private $factory;
 
-    public function test()
+    public function testInvalidBehaviour()
     {
         $field = $this->factory->createArray('name');
+        $field->setValidBehaviour(false);
         $values = $field->getValues();
 
         static::assertTrue(is_array($values));
@@ -26,6 +27,15 @@ class ArrayFieldSuccessTest extends \PHPUnit_Framework_TestCase
         static::assertSame('string', $values[2]);
         static::assertInstanceOf(\stdClass::class, $values[3]);
         static::assertSame(1, $values[4]);
+    }
+
+    public function testValidBehaviour()
+    {
+        $field = $this->factory->createArray('name');
+        $values = $field->getValues();
+
+        static::assertTrue(is_array($values));
+        static::assertSame(1, count($values));
     }
 
     protected function setUp()

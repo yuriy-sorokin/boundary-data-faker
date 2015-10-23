@@ -11,11 +11,14 @@ abstract class Field
      * @var string
      */
     protected $name;
-
     /**
      * @var array
      */
     protected $values;
+    /**
+     * @var bool
+     */
+    private $validBehaviour = true;
 
     /**
      * @param string $name
@@ -45,11 +48,33 @@ abstract class Field
      */
     public function getValues()
     {
-        $this->values = [''];
+        if (false === $this->isValidBehaviour()) {
+            $this->values = [''];
+        }
+
         $this->generateValues();
 
         return $this->values;
     }
 
+    /**
+     * @return boolean
+     */
+    public function isValidBehaviour()
+    {
+        return $this->validBehaviour;
+    }
+
     abstract protected function generateValues();
+
+    /**
+     * @param boolean $validBehaviour
+     * @return Field
+     */
+    public function setValidBehaviour($validBehaviour)
+    {
+        $this->validBehaviour = $validBehaviour;
+
+        return $this;
+    }
 }

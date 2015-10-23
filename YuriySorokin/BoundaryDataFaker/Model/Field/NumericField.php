@@ -69,10 +69,18 @@ class NumericField extends Field
     private function setMaxValues()
     {
         if (null !== $this->max) {
-            $this->values[] = $this->max + 1;
+            $this->values[] = $this->getMaxValue();
         }
 
         return $this;
+    }
+
+    /**
+     * @return int
+     */
+    private function getMaxValue()
+    {
+        return (true === $this->isValidBehaviour() ? $this->max : $this->max + 1);
     }
 
     /**
@@ -81,9 +89,17 @@ class NumericField extends Field
     private function setMinValues()
     {
         if (null !== $this->min) {
-            $this->values[] = $this->min - 1;
+            $this->values[] = $this->getMinValue();
         }
 
         return $this;
+    }
+
+    /**
+     * @return int
+     */
+    private function getMinValue()
+    {
+        return (true === $this->isValidBehaviour() ? $this->min : $this->min - 1);
     }
 }

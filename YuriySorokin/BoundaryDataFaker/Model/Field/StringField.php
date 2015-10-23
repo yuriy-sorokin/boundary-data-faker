@@ -69,10 +69,18 @@ class StringField extends Field
     private function setMaxValues()
     {
         if (null !== $this->maxLength) {
-            $this->values[] = str_repeat('a', $this->maxLength + 1);
+            $this->values[] = $this->getMaxValue();
         }
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    private function getMaxValue()
+    {
+        return str_repeat('a', $this->maxLength + (true === $this->isValidBehaviour() ? 0 : 1));
     }
 
     /**
@@ -81,9 +89,17 @@ class StringField extends Field
     private function setMinValues()
     {
         if (null !== $this->minLength) {
-            $this->values[] = str_repeat('a', $this->minLength - 1);
+            $this->values[] = $this->getMinValue();
         }
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    private function getMinValue()
+    {
+        return str_repeat('a', $this->minLength - (true === $this->isValidBehaviour() ? 0 : 1));
     }
 }
