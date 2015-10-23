@@ -16,18 +16,37 @@ class DataFakerTest extends \PHPUnit_Framework_TestCase
         $faker = new DataFaker();
         $data = $faker
             ->addField($fieldFactory
-                           ->createString('name')
+                           ->createString('name1')
                            ->setMinLength(3)
                            ->setMaxLength(20))
             ->addField($fieldFactory
-                           ->createNumeric('age')
+                           ->createString('name2')
+                           ->setMinLength(3))
+            ->addField($fieldFactory
+                           ->createString('name3')
+                           ->setMaxLength(3))
+            ->addField($fieldFactory
+                           ->createNumeric('age1')
                            ->setMin(18)
                            ->setMax(343))
+            ->addField($fieldFactory
+                           ->createNumeric('age2')
+                           ->setMin(18))
+            ->addField($fieldFactory
+                           ->createNumeric('age3')
+                           ->setMax(18))
             ->getData();
 
         static::assertTrue(is_array($data));
-        static::assertEquals(2, count($data));
-        static::assertArrayHasKey('name', $data[0]);
-        static::assertArrayHasKey('age', $data[0]);
+
+        foreach ($data as $item) {
+            static::assertEquals(6, count($item));
+            static::assertArrayHasKey('name1', $item);
+            static::assertArrayHasKey('name2', $item);
+            static::assertArrayHasKey('name3', $item);
+            static::assertArrayHasKey('age1', $item);
+            static::assertArrayHasKey('age2', $item);
+            static::assertArrayHasKey('age3', $item);
+        }
     }
 }

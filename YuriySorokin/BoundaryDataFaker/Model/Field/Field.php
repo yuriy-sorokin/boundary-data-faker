@@ -48,6 +48,8 @@ abstract class Field
      */
     public function getValues()
     {
+        $this->values = [];
+
         if (false === $this->isValidBehaviour()) {
             $this->values = [''];
         }
