@@ -12,7 +12,7 @@ class DataFaker
     /**
      * @var \YuriySorokin\BoundaryDataFaker\Model\Field\Field[]
      */
-    private $fields;
+    private $fields = [];
 
     /**
      * @param \YuriySorokin\BoundaryDataFaker\Model\Field\Field $field
@@ -37,6 +37,8 @@ class DataFaker
                 $data[$key][$field->getName()] = $fieldValue;
             }
         }
+
+        $this->fields = [];
 
         return $data;
     }
