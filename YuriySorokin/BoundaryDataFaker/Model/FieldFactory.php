@@ -34,7 +34,7 @@ class FieldFactory
     /**
      * @param string $name
      * @throws \InvalidArgumentException
-     * @return \YuriySorokin\BoundaryDataFaker\Model\Field\NumericField
+     * @return \YuriySorokin\BoundaryDataFaker\Model\Field\ArrayField
      */
     public function createArray($name)
     {
