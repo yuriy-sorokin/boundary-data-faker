@@ -49,9 +49,9 @@ class DataFaker
             if ($maxFieldValuesAmount > $fieldValuesAmount) {
                 $firstValue = reset($fieldValues);
 
-                for ($a = $fieldValuesAmount; $a <= $maxFieldValuesAmount; $a++) {
-                    $this->data[$key][$field->getName()] = $firstValue;
+                for ($a = $fieldValuesAmount; $a < $maxFieldValuesAmount; $a++) {
                     $key++;
+                    $this->data[$key][$field->getName()] = $firstValue;
                 }
             }
         }
