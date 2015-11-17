@@ -1,11 +1,11 @@
 <?php
-namespace YuriySorokin\BoundaryDataFaker\Tests\Field;
+namespace YuriySorokin\BoundaryDataFaker\Test\Field;
 
 use YuriySorokin\BoundaryDataFaker\Model\FieldFactory;
 
 /**
  * Class StringFieldFailureTest
- * @package YuriySorokin\BoundaryDataFaker\Tests\Field
+ * @package YuriySorokin\BoundaryDataFaker\Test\Field
  */
 class StringFieldFailureTest extends \PHPUnit_Framework_TestCase
 {
@@ -48,6 +48,9 @@ class StringFieldFailureTest extends \PHPUnit_Framework_TestCase
         $this->factory->createString(null);
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function setUp()
     {
         parent::setUp();

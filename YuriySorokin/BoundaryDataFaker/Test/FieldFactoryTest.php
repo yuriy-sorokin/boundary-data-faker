@@ -1,5 +1,5 @@
 <?php
-namespace YuriySorokin\BoundaryDataFaker\Tests;
+namespace YuriySorokin\BoundaryDataFaker\Test;
 
 use YuriySorokin\BoundaryDataFaker\Model\Field\NumericField;
 use YuriySorokin\BoundaryDataFaker\Model\Field\StringField;
@@ -26,6 +26,9 @@ class FieldFactoryTest extends \PHPUnit_Framework_TestCase
         static::assertTrue($this->factory->createNumeric('name') instanceof NumericField);
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function setUp()
     {
         parent::setUp();

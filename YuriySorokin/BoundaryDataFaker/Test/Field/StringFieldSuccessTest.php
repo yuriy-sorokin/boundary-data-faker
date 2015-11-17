@@ -1,11 +1,11 @@
 <?php
-namespace YuriySorokin\BoundaryDataFaker\Tests\Field;
+namespace YuriySorokin\BoundaryDataFaker\Test\Field;
 
 use YuriySorokin\BoundaryDataFaker\Model\FieldFactory;
 
 /**
  * Class StringFieldSuccessTest
- * @package YuriySorokin\BoundaryDataFaker\Tests\Field
+ * @package YuriySorokin\BoundaryDataFaker\Test\Field
  */
 class StringFieldSuccessTest extends \PHPUnit_Framework_TestCase
 {
@@ -24,7 +24,7 @@ class StringFieldSuccessTest extends \PHPUnit_Framework_TestCase
             ->getValues();
 
         static::assertTrue(is_array($values));
-        static::assertSame(3, count($values));
+        static::assertCount(3, $values);
         static::assertSame(0, strlen($values[0]));
         static::assertSame(4, strlen($values[1]));
         static::assertSame(21, strlen($values[2]));
@@ -39,11 +39,14 @@ class StringFieldSuccessTest extends \PHPUnit_Framework_TestCase
             ->getValues();
 
         static::assertTrue(is_array($values));
-        static::assertSame(2, count($values));
+        static::assertCount(2, $values);
         static::assertSame(5, strlen($values[0]));
         static::assertSame(20, strlen($values[1]));
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function setUp()
     {
         parent::setUp();

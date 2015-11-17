@@ -2,7 +2,7 @@
   "name": "yuriy-sorokin/boundary-data-faker",
   "description": "A library to generate boundary condition values for your tests",
   "require-dev": {
-    "phpunit/phpunit": "^4.8"
+    "phpunit/phpunit": "5.0.*"
   },
   "license": "MIT",
   "authors": [

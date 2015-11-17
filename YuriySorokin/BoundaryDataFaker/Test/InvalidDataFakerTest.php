@@ -1,5 +1,5 @@
 <?php
-namespace YuriySorokin\BoundaryDataFaker\Tests;
+namespace YuriySorokin\BoundaryDataFaker\Test;
 
 use YuriySorokin\BoundaryDataFaker\Model\FieldFactory;
 use YuriySorokin\BoundaryDataFaker\Model\InvalidDataFaker;
@@ -26,7 +26,7 @@ class InvalidDataFakerTest extends \PHPUnit_Framework_TestCase
             ->getData();
 
         static::assertTrue(is_array($data));
-        static::assertEquals(3, count($data));
+        static::assertCount(3, $data);
         static::assertArrayHasKey('name', $data[0]);
         static::assertArrayHasKey('age', $data[0]);
     }

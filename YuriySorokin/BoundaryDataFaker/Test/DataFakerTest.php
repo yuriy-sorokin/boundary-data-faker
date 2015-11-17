@@ -1,5 +1,5 @@
 <?php
-namespace YuriySorokin\BoundaryDataFaker\Tests;
+namespace YuriySorokin\BoundaryDataFaker\Test;
 
 use YuriySorokin\BoundaryDataFaker\Model\DataFaker;
 use YuriySorokin\BoundaryDataFaker\Model\FieldFactory;
@@ -40,7 +40,7 @@ class DataFakerTest extends \PHPUnit_Framework_TestCase
         static::assertTrue(is_array($data));
 
         foreach ($data as $item) {
-            static::assertEquals(6, count($item));
+            static::assertCount(6, $item);
             static::assertArrayHasKey('name1', $item);
             static::assertArrayHasKey('name2', $item);
             static::assertArrayHasKey('name3', $item);

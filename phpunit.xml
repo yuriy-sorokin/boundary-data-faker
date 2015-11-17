@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true">
+    <testsuites>
+        <testsuite name="Application Test Suite">
+            <directory>YuriySorokin/BoundaryDataFaker/Test</directory>
+        </testsuite>
+    </testsuites>
+
+    <filter>
+        <whitelist>
+            <directory>YuriySorokin/BoundaryDataFaker</directory>
+            <exclude>
+                <directory>YuriySorokin/BoundaryDataFaker/Test</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>

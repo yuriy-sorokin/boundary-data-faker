@@ -1,11 +1,11 @@
 <?php
-namespace YuriySorokin\BoundaryDataFaker\Tests\Field;
+namespace YuriySorokin\BoundaryDataFaker\Test\Field;
 
 use YuriySorokin\BoundaryDataFaker\Model\FieldFactory;
 
 /**
  * Class ArrayFieldFailureTest
- * @package YuriySorokin\BoundaryDataFaker\Tests\Field
+ * @package YuriySorokin\BoundaryDataFaker\Test\Field
  */
 class ArrayFieldFailureTest extends \PHPUnit_Framework_TestCase
 {
@@ -20,6 +20,9 @@ class ArrayFieldFailureTest extends \PHPUnit_Framework_TestCase
         $this->factory->createArray(null);
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function setUp()
     {
         parent::setUp();

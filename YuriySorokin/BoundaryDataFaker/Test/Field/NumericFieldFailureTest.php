@@ -1,11 +1,11 @@
 <?php
-namespace YuriySorokin\BoundaryDataFaker\Tests\Field;
+namespace YuriySorokin\BoundaryDataFaker\Test\Field;
 
 use YuriySorokin\BoundaryDataFaker\Model\FieldFactory;
 
 /**
  * Class NumericFieldFailureTest
- * @package YuriySorokin\BoundaryDataFaker\Tests\Field
+ * @package YuriySorokin\BoundaryDataFaker\Test\Field
  */
 class NumericFieldFailureTest extends \PHPUnit_Framework_TestCase
 {
@@ -39,6 +39,9 @@ class NumericFieldFailureTest extends \PHPUnit_Framework_TestCase
             ->setMax(1);
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function setUp()
     {
         parent::setUp();
